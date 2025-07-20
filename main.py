@@ -71,9 +71,9 @@ try:
     def make_model() -> "XGBRegressor":
         """Return a fresh XGBRegressor with tuned‑for‑speed defaults."""
         return XGBRegressor(
-            n_estimators=1500,
-            learning_rate=0.01,
-            max_depth=16,
+            n_estimators=500,
+            learning_rate=0.05,
+            max_depth=6,
             subsample=0.9,
             colsample_bytree=0.8,
             n_jobs=-1,
@@ -87,7 +87,7 @@ except ModuleNotFoundError:
 
     def make_model() -> "RandomForestRegressor":
         return RandomForestRegressor(
-            n_estimators=1300,
+            n_estimators=300,
             max_depth=None,
             n_jobs=-1,
             random_state=42,
